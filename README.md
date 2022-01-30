@@ -11,6 +11,12 @@ curl http://c1-sb-hwarwslocdev:8080/api/public/docker
 
 
 Endpoints:
+...................
+http://localhost:8080/hello
 http://localhost:8080/api/public/docker
-http://localhost:8080/api/public/dummy
 
+
+
+http://localhost:8080/api/public/dummy/iamrws
+http://localhost:8080/api/public/dummy/tdorws
+http://localhost:8080/api/public/dummy/hwarws
