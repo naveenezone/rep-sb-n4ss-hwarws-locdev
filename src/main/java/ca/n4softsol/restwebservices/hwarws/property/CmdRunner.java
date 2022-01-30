@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class CmdRunner implements CommandLineRunner {
 
-
-
-
 	@Autowired
 	DockerProperties dockerProperties;
+
+	@Value("${hwarws.greet}")
+	private String greet;
 
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
@@ -20,8 +20,9 @@ public class CmdRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("===== Docker: " + dockerProperties.getDocker().getContainerName());
-		System.out.println("===== Database: " + dbUrl);		
-		
+		System.out.println("===== Database: " + dbUrl);
+		System.out.println("===== Greet: " + greet);
+
 	}
 
 }

@@ -1,7 +1,6 @@
 package ca.n4softsol.restwebservices.hwarws.property;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -20,9 +19,6 @@ public class ApiController {
 
 	@Autowired
 	DockerProperties dockerProperties;
-
-	@Autowired
-	private DummyRepository dummyRepository;
 
 	@RequestMapping(value = "/api/public/docker", method = RequestMethod.GET)
 	public Map<String, String> homeDocker() {
@@ -43,18 +39,4 @@ public class ApiController {
 		}
 	}
 
-
-	@RequestMapping(value = "/api/public/dummy", method = RequestMethod.GET)
-	public List<Dummy> homeDummy() {
-
-		logger.info("Rest API Controller Method: homeDummy()-/api/public/dummy");
-		try {
-			logger.info("Rest API Controller Method: homeDummy()- Successfully Processed.");
-			return dummyRepository.findAll();
-		} catch (Exception e) {
-			logger.error("Rest API Controller Method: homeDummy()-Error:Request /api/public/dummy NOT accessible.");
-			return dummyRepository.findAll();
-		}
-
-	}
 }
